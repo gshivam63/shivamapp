@@ -1,0 +1,29 @@
+    <ion-view title="Services">
+      <ion-content>
+        <div ng-app="" ng-init="services = [
+             {service:'all'},
+             {service:'Body'},
+             {service:'Classes'},
+             {service:'Face'},
+             {service:'Hair'},
+             {service:'Hair Removal'},
+             {service:'Massage'},
+             {service:'Membership'},
+             {service:'Nails'},
+             {service:'Skin'},
+             {service:'Specials & Combos'}
+            ]" >   
+                 <div class="list list-inset">
+                 <label class="item item-input">
+                     <i class="icon ion-search placeholder-icon"></i>
+                     <input type="text" placeholder="Search by service..." ng-model="servicesFilter">
+                  </label>
+                 </div>  
+                 <div class="list">
+                      <a class="item" ng-click='setservice(x.service)' href="#/event/look_and_book"  ng-repeat="x in services|filter:servicesFilter" id="{{x.service}}">
+                        {{ x.service }}
+                      </a>
+                  </div>
+          </div>
+      </ion-content>
+    </ion-view>

@@ -1,0 +1,25 @@
+	<ion-view title="Pick & Book Appointment">
+      <ion-content>  
+          <div class="row" ng-repeat="x in photos">
+            <div class="col">
+              <div class="row first_row">
+                <span class="image_span" ng-repeat="y in x[0]" ng-show="$first">
+                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{y}}" class="searchresults" /></a>
+                </span>
+                <div class="row second_row">
+                    <div class="col col-67 left">
+                      <a href="#/event/searchresults_clicked" ng-click="setindex($index)"><font class="spa_name">{{spaname[($index)]}}</font></a>
+                      <br/>
+                      <font class="spa_location">{{location}}</font>
+                    </div>
+                    <div class="col col-33 right">
+                      <font class="spa_rating">{{rating[($index)]}}</font><br/>
+                      <font class="rating_text">Ratings</font>
+                    </div>
+              </div>
+              </div>
+
+            </div>
+          <div>
+      </ion-content>
+    </ion-view>

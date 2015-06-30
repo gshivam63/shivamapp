@@ -1,0 +1,24 @@
+      <ion-view title="Look AND BOOK">
+       <ion-content has-header="true" padding="true" class="lookcontent">
+            <ion-content padding="true" delegate-handle="mainScroll">
+
+          <h4 ng-click="get_location_selected()">Update Location</h4>
+          <h4 ng-click="getservice()">Update Service</h4>
+
+          <p class="look_and_book_text">LOOK AND BOOK</p>
+          <div class="lookContainer">
+              <div class="mylist">
+                          <a href="#/event/location" ng-init="get_location_selected()" >
+                                  {{location}}
+                          </a>
+              </div>
+              <div class="mylist">
+                          <a href="#/event/services" ng-init="getservice()" >
+                                  {{service}}
+                          </a>
+              </div>
+          </div>
+          <button id="search_button" onclick="window.location.href='#/event/searchresults'" ><font color="white">SEARCH RESULTS</font></button>
+      
+        </ion-content>
+      </ion-view>

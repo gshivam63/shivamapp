@@ -1,0 +1,221 @@
+body{
+width: 100%;
+}
+.righticon{
+	float: right;
+}
+.location{
+	text-decoration: none;
+	color: black;
+}
+.searchresults{
+	width:100%;
+	height: 600px;
+	position: relative;
+}
+.first_row{
+	position: relative;
+}
+.second_row{
+   position: absolute; 
+   top: 405px; 
+   left: 0;
+   width: 100%; 
+   height: 200px;
+   background-color:black;
+   border: 1px solid black;
+   opacity: 0.8;
+   filter: alpha(opacity=80);
+   border-style: none;
+}
+.left{
+	position: relative;
+	padding-top: 4%;
+}
+.right{
+	text-align: center;
+	padding-top: 4%;
+}
+a{
+	text-decoration: none;
+}
+.spa_name{
+	margin-left: 5%;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+}
+.spa_location{
+	margin-left: 5%;
+	font-size: 20px;
+	color: white;
+}
+.spa_rating{
+	font-size: 25px;
+	color: green;
+	color: white;
+}
+.rating_text{
+	color: lightgreen;
+	font-size: 20px;
+}
+.image_span{
+	width: 100%;
+}
+
+/* homecontent.css*/
+.mycontent {
+	height: 1000px;
+    background: url('../img/app_background.png');
+    background-size: cover;
+    text-align: center;
+  }
+ .scroll{
+  height:100%;
+ }
+.col_common{
+	padding-top: 130px;
+	width: 100%;
+	height: 333px;
+	text-align: center;
+	color: white;
+	font-size: 35px;
+}
+.col_common a{
+	text-decoration: none;
+	color: white;
+}
+.title-image{
+	height: 33px;
+}
+
+/*side_menu css */
+.profile_img{
+	padding:30px;
+	height: 260px;
+}
+.item{
+	text-align: center;
+}
+/*look and Book css */
+.look_and_book_text{
+	margin-top:150px;
+	font-size:42px;
+	font-weight: bold;
+}
+.lookContainer{
+	margin-right: auto;
+    margin-left: auto;
+    width:350px;
+}
+.mylist{
+	font-size: 20px;
+	padding-top: 20px;
+	display: block;
+	background-color: white;
+	width:350px; 
+	height:50px; 
+	margin-top:40px; 
+}
+.mylist a{
+	text-decoration: none;
+	color: black;
+}
+#search_button{
+	background-color: #8cd093;
+	height:50px; 
+	margin-top:20px;
+}
+.lookcontent {
+	height: 1000px;
+    background: url('../img/Look_Wallpaper.jpg');
+    background-size: cover;
+    text-align: center;
+  }
+/*surpriseme.html css */
+.surprisemecontainer{
+	height: 1000px;
+    background: url('../img/No_offers.png') no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+/* INFO.html css */
+.image_layer{
+	position: relative;
+}
+.layer{
+   position: absolute; 
+   top: 600px; 
+   left: 0;
+   width: 100%; 
+   background-color:black;
+   border: 1px solid black;
+   opacity: 0.8;
+   filter: alpha(opacity=80);
+   border-style: none;
+}
+.left_layer{
+	position: relative;
+	float: left;
+	width:50%;
+	height: 82px;
+	background-color: red;
+	text-align: center;
+	padding-top: 25px;
+}
+.right_layer{
+	text-align: center;
+	float: right;
+	text-align: center;
+	width:50%;
+	height: 82px;
+	background-color: #8cd093;
+	padding-top: 25px;
+}
+.book_appointment{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+.write_review{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+.info_spaname{
+	height: auto;
+	padding: 20px;
+	text-align: center;
+	font-size: 45px;
+}
+.info_open_close{
+	text-align: center;
+	margin-top: 30px;
+}
+#open{
+	color: white;
+	width:150px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #8cd093;
+}
+#info_title{
+	padding: 15px;
+	font-size: 30px;
+	text-align: center;
+}
+.info_address_text{
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+}
+.info_contacts_text{
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;	
+}
+#timings{
+	padding: 10px;
+	font-size: 20px;
+	text-align: center;
+}

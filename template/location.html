@@ -1,0 +1,22 @@
+    <ion-view title="Location">
+      <ion-content>
+        <div class="list list-inset">
+                 <label class="item item-input">
+                     <i class="icon ion-search placeholder-icon"></i>
+                     <input type="text" placeholder="Search for location..." ng-model="search_locations">
+                  </label>
+        </div> 
+        <h1 ng-click="getString()">Update</h1>
+                 <div class="list" ng-init="getString()">
+                      <div class="item item-divider">
+                        <a href="#/event/selectcity" class="location">{{ city }} <i class="icon ion-chevron-right icon-accessory pull-right righticon"></i></a>
+                      </div>
+                      <div class="list">
+                        <a class="item" href="#/event/look_and_book" id="{{x.name}}" ng-click='set_location_selected(x.name)' ng-repeat="x in names|filter:search_locations">
+                          {{ x.name }}
+                        </a>
+                      </div>
+                 </div>
+          </div>
+      </ion-content>
+    </ion-view>

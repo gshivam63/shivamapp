@@ -1,0 +1,24 @@
+    <ion-view title="Choose City">
+      <ion-content>
+        <div ng-app="" ng-init="cities = [
+             {city:'Hyderabad'},
+             {city:'Bengaluru'},
+             {city:'Chennai'},
+             {city:'New Delhi'},
+             {city:'Pune'},
+             {city:'Mumbai'}
+            ]" >   
+                 <div class="list list-inset">
+                 <label class="item item-input">
+                     <i class="icon ion-search placeholder-icon"></i>
+                     <input type="text" placeholder="Search for city..." ng-model="citiesFilter">
+                  </label>
+                 </div>  
+                 <div class="list">
+                      <a class="item" ng-click='setString(x.city)' href="#/event/location"  ng-repeat="x in cities|filter:citiesFilter" id="{{x.city}}">
+                        {{ x.city }}
+                      </a>
+                  </div>
+          </div>
+      </ion-content>
+    </ion-view>

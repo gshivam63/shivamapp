@@ -1,0 +1,37 @@
+	<ion-content has-header="true">
+          <div style="padding-top:80px;" class="image_layer">
+                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{photos[2].original}}" class="searchresults" /></a>
+          </div>
+          <div class="layer">
+            <div class="left_layer">
+              <span class="book_appointment">BOOK APPOINTMENT</span>
+            </div>
+            <div class="right_layer">
+              <span class="write_review">WRITE A REVIEW</span>
+            </div>
+          </div>
+          <div class="info_spaname">
+              {{ names.name }}
+          </div>
+          <div class="info_open_close">
+              <button id="open" type="button">OPEN</button>
+          </div>
+          <div class="openhours">
+            <div id="info_title">Open Hours</div>
+            <div id="timings">{{ timings.from }} &nbsp; &nbsp; &nbsp; &nbsp; {{ timings.to }}</div>
+          </div>
+          <div class="address">
+            <div id="info_title">Address</div>
+            <div class="info_address_text">{{ names.address }}</div>
+          </div>
+          <div class="rating_and_reviews">
+            <div id="info_title">Ratings and Reviews</div>
+          </div>
+          <div class="contact">
+            <div id="info_title">Contact</div>
+            <div class="info_contacts_text">{{ names.contacts }}</div>
+          </div>
+          <div class="facilities">
+            <div id="info_title">Facilities</div>
+          </div>
+    </ion-content>

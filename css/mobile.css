@@ -1,0 +1,30 @@
+@media (max-width: 480px) {
+.left{
+	padding-left: 3%;
+	position: relative;
+	padding-top: 12%;
+}
+.right{
+	text-align: center;
+	padding-top: 13%;
+}
+.spa_name{
+	left:0;
+	font-size: 19px;
+	color: white;
+	font-weight: bold;
+}
+.spa_location{
+	font-size: 19px;
+	color: white;
+}
+.spa_rating{
+	font-size: 25px;
+	color: green;
+	color: white;
+}
+.rating_text{
+	color: lightgreen;
+	font-size: 20px;
+}
+}
