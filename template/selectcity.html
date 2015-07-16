@@ -1,4 +1,7 @@
     <ion-view title="Choose City">
+      <ion-nav-buttons side="left">
+        <span ng-click="navigatelocation()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons> 
       <ion-content>
         <div ng-app="" ng-init="cities = [
              {city:'Hyderabad'},
@@ -15,7 +18,7 @@
                   </label>
                  </div>  
                  <div class="list">
-                      <a class="item" ng-click='setString(x.city)' href="#/event/location"  ng-repeat="x in cities|filter:citiesFilter" id="{{x.city}}">
+                      <a class="item" ng-click='setString(x.city)' href="#/event2/location"  ng-repeat="x in cities|filter:citiesFilter" id="{{x.city}}">
                         {{ x.city }}
                       </a>
                   </div>

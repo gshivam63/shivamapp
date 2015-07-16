@@ -1,4 +1,19 @@
-	<ion-content has-header="true">
-              menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>
-              menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>menu <br/>
+	
+	<ion-content has-header="true" ng-init="updatemenu()">
+               <div class="menudiv" ng-repeat="x in menuinfo">
+				   <div ng-repeat="y in x">
+							<div class="menucard"> {{ y.name }} </div>
+							<div class="row item menuitem" ng-repeat="z in y.allitems">
+								<div class="col col-67 menuitemname">{{ z.name }}</div>
+								<div class="col col-33"  id="plusicon">
+									<span ng-click='addtobooking(z.name)' class="plusicon">
+										<i class="icon" ng-class="{'ion-plus-circled': !isActive, 'ion-checkmark-circled': isActive}" ng-click="isActive = !isActive"></i>
+									</span>
+								</div>
+							</div>
+				   </div>
+				</div>
     </ion-content>
+    <ion-footer-bar class="bar-assertive menufooter">
+		  <div class="alwaysvisible" ng-click="addbookingdetails()">PROCEED</div>
+	</ion-footer-bar>

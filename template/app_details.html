@@ -1,0 +1,39 @@
+  <ion-view title="{{details.venuename}}">
+    <ion-nav-buttons side="left">
+        <span ng-click="navigatemybookings()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+     </ion-nav-buttons> 
+    <ion-content>
+      <div class="row">
+            <div class="col">
+              <div class="row first_row">
+                <span class="image_span"  ng-repeat="x in names">
+                  <span ng-repeat="y in x.photos" ng-show="$first">
+                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{y.original}}" class="searchresults"/></a>
+                 </span>
+                </span>
+                <div class="row cancel-rebook" >
+                    <div class="col col-50 cancel" style="padding-top:30px;">
+                      <font class="spa_name">CANCEL</font>
+                    </div>
+                   <div class="col col-50 rebook" style="padding-top:30px;">
+                      <font class="spa_rating">REBOOK</font>
+                    </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col date">DATE & TIME</div>
+          </div>
+          <div class="row">
+              <div class="col detail">{{ details.bookingdate}} AT {{ details.bookingtime }}</div>
+          </div>
+          <div class="row date">
+            <div class="col">SERVICES</div>
+          </div>
+          <div class="row detail" ng-repeat="x in servicedetails">
+            <div class="col col-50">{{ x.name}}</div>
+            <div class="col col-50">Rs. {{ x.price}}</div>
+          </div>
+    </ion-content>
+  </ion-view>

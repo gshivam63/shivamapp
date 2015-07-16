@@ -1,17 +1,20 @@
     <ion-view title="Services">
+      <ion-nav-buttons side="left">
+      <span ng-click="navigatelook()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
       <ion-content>
         <div ng-app="" ng-init="services = [
-             {service:'all'},
-             {service:'Body'},
-             {service:'Classes'},
-             {service:'Face'},
-             {service:'Hair'},
-             {service:'Hair Removal'},
-             {service:'Massage'},
-             {service:'Membership'},
-             {service:'Nails'},
-             {service:'Skin'},
-             {service:'Specials & Combos'}
+             {service:'all',parent:'all'},
+             {service:'Body',parent:'994'},
+             {service:'Classes',parent:'8042'},
+             {service:'Face',parent:'983'},
+             {service:'Hair',parent:'974'},
+             {service:'Hair Removal',parent:'987'},
+             {service:'Massage',parent:'978'},
+             {service:'Membership',parent:''},
+             {service:'Nails',parent:'990'},
+             {service:'Skin',parent:'997'},
+             {service:'Specials & Combos',parent:'978'}
             ]" >   
                  <div class="list list-inset">
                  <label class="item item-input">
@@ -20,7 +23,7 @@
                   </label>
                  </div>  
                  <div class="list">
-                      <a class="item" ng-click='setservice(x.service)' href="#/event/look_and_book"  ng-repeat="x in services|filter:servicesFilter" id="{{x.service}}">
+                      <a class="item" ng-click='setservice(x.service);setparent(x.parent)' href="#/event2/look_and_book"  ng-repeat="x in services|filter:servicesFilter" id="{{x.service}}">
                         {{ x.service }}
                       </a>
                   </div>

@@ -1,21 +1,24 @@
-	<ion-view title="{{ names.name }}">
+ 
+	<ion-view ng-init="getalldata()" title="{{pagetitle}}">
+      <ion-nav-buttons side="left">
+        <span ng-click="navigate()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
        <ion-tabs class="tabs-top tabs-dark">
 
-        <ion-tab title="INFO" href="#/event/searchresults_clicked/info">
+        <ion-tab title="INFO" href="#/event2/searchresults_clicked/info">
           <ion-nav-view name="info-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="MENU" href="#/event/searchresults_clicked/menu">
+        <ion-tab title="MENU" href="#/event2/searchresults_clicked/menu">
           <ion-nav-view name="menu-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="GALLERY" href="#/event/searchresults_clicked/gallery">
+        <ion-tab title="GALLERY" href="#/event2/searchresults_clicked/gallery">
           <ion-nav-view name="gallery-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="REVIEWS" href="#/event/searchresults_clicked/reviews">
+        <ion-tab title="REVIEWS" href="#/event2/searchresults_clicked/reviews">
           <ion-nav-view name="reviews-tab"></ion-nav-view>
         </ion-tab>
-
       </ion-tabs>
-    </ion-view>
+  </ion-view>

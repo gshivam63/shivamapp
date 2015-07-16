@@ -1,0 +1,31 @@
+	<ion-content has-header="true">
+      <div style="padding-top:90px;">  
+        <div class="list">
+          <div class="item item-divider">
+              Appointment Summary
+          </div>
+        </div>
+        <div class="summary">
+          <div><button class="detailsbtn"><font color="white">Booking Details</font></button></div>
+          <div><span ng-repeat="x in bookinglist" ng-show="$index > 0">{{ x }},</span></div>
+          <div class="row">
+            <div class="col col-50"><font size="5">DATE</font></div>
+            <div class="col col-50"><font size="5">TIME</font></div>
+          </div>
+          <div class="row">
+            <div class="col col-50">{{ bookingdate|date:'MM/dd/yyyy'}}</div>
+            <div class="col col-50">{{ bookingtime}}</div>
+          </div>
+          <div><button class="detailsbtn"><font color="white">Personal Details</font></button></div>
+          <hr width="90%"/>
+          {{ venueinfo_title[0].name }}<br/>
+          {{ venueinfo_title[0].address }} <br/>
+          {{ venueinfo_title[0].contacts }}<br/>
+          <div class="row">
+            <div class="col col-50"><ion-radio>Pay At Venue</ion-radio></div>
+            <div class="col col-50"><ion-radio>Credit/Debit Card</ion-radio></div>
+          </div>
+          <div><button class="confirmbtn" onclick="window.location.href='#/event2/searchresults_clicked/addnewurl'" ><font color="white">CONFIRM BOOKING</font></button></div>
+        </div>
+      </div>
+  </ion-content>

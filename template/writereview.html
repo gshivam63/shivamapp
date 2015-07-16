@@ -1,0 +1,22 @@
+    <ion-view title="Write Review">  
+      <ion-nav-buttons side="left">
+      <span ng-click="navigatesearchresults_clicked()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
+		<div style="padding-top:90px;" class="writereview_div">
+			<div class="row">
+				<div class="col">
+	                  <label class="item item-input large">
+	                    <input type="text" id="write_your_review" ng-model="user_review" placeholder="Tell us about your experience!">
+	                  </label>
+	            </div>
+	        </div>
+	        <div class="row">
+	        	<div class="col">
+					 <span ng-init="rating = star.rating + 1"></span>
+	           		 <span class="star-rating" star-rating rating-value="rating" data-max="5"></span>
+	           		 <div><button class="review_button" ng-click="rateFunction(rating)" type="button">Submit</button></div>
+           		</div>
+	        </div>
+		</div>
+    </ion-view>
+	

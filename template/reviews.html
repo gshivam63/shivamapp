@@ -1,4 +1,20 @@
-		<ion-content has-header="true">
-              reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>
-              reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>reviews <br/>
+		
+		<ion-content has-header="true" ng-init="updatereviews()">
+			<div style="padding-top:90px;">
+               <div class="card" ng-repeat="x in reviewInfo">
+				   <div class="row item" ng-repeat="y in x">
+							<div class="col col-75 name_review"> 
+								<div class="row">
+									<div class="col col-75 upper_review">{{ y.name}} </div>
+								</div>
+								<div class="row">
+									<div class="col col-75"><p class="bottom_review">{{ y.remarks}}</p></div>
+								</div>
+							</div>
+							<div class="col col-25 rating_col">
+								<div id="review_rating">{{ y.rating }}</div>  
+							</div>
+				   </div>
+				</div>
+            </div>
          </ion-content>

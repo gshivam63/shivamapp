@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic','ui.router','ui.bootstrap'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,6 +29,15 @@ angular.module('starter', ['ionic'])
     }
     }
     })
+    .state('eventmenu2', {
+      url: "/event2",
+      abstract:true,
+      views:{
+        'view1':{
+      templateUrl: "template/event-menu2.html"
+    }
+    }
+    })
      .state('eventmenu.home', {
       url: "/home",
       views: {
@@ -48,7 +57,7 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.look_and_book', {
+    .state('eventmenu2.look_and_book', {
       url: "/look_and_book",
       views: {
         'menuContent' :{
@@ -57,23 +66,25 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.surpriseme', {
+    .state('eventmenu2.surpriseme', {
       url: "/surpriseme",
       views: {
         'menuContent' :{
-          templateUrl: "template/surpriseme.html"
+          templateUrl: "template/surpriseme.html",
+          controller:'surprisemeCtrl'
         }
       }
     })
-    .state('eventmenu.bookings', {
+    .state('eventmenu2.bookings', {
       url: "/bookings",
       views: {
         'menuContent' :{
-          templateUrl: "template/bookings.html"
+          templateUrl: "template/bookings.html",
+          controller:"mybookingCtrl"
         }
       }
     })
-    .state('eventmenu.location', {
+    .state('eventmenu2.location', { 
       url: "/location",
       views: {
         'menuContent' :{
@@ -82,7 +93,7 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.selectcity', {
+    .state('eventmenu2.selectcity', {
       url: "/selectcity",
       views: {
         'menuContent' :{
@@ -91,7 +102,7 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.services', {
+    .state('eventmenu2.services', {
       url: "/services",
       views: {
         'menuContent' :{
@@ -100,7 +111,7 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.searchresults', {
+    .state('eventmenu2.searchresults', {
       url: "/searchresults",
       views: {
         'menuContent' :{
@@ -109,16 +120,25 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.searchresults_clicked', {
+    .state('eventmenu2.app_details', {
+      url: "/app_details",
+      views: {
+        'menuContent' :{
+          templateUrl: "template/app_details.html",
+        controller: 'app_detailsCtrl'
+        }
+      }
+    })
+    .state('eventmenu2.searchresults_clicked', {
       url: "/searchresults_clicked",
       views: {
         'menuContent' :{
           templateUrl: "template/searchresults_clicked.html",
-          controller: 'venues_clickedCtrl'
+          controller:'tabCtrl'
         }
       }
     })
-    .state('eventmenu.searchresults_clicked.info', {
+    .state('eventmenu2.searchresults_clicked.info', {
       url: "/info",
       views: {
         'info-tab' :{
@@ -127,15 +147,52 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.searchresults_clicked.menu', {
-      url: "/menu",
+    .state('eventmenu2.writereview', {
+      url: "/writereview",
       views: {
-        'menu-tab' :{
-          templateUrl: "template/menu.html"
+        'menuContent' :{
+          templateUrl: "template/writereview.html",
+          controller:'RatingCtrl'
         }
       }
     })
-    .state('eventmenu.searchresults_clicked.gallery', {
+    .state('eventmenu2.searchresults_clicked.menu', {
+      url: "/menu",
+      views: {
+        'menu-tab' :{
+          templateUrl: "template/menu.html",
+          controller:'menuCtrl'
+        }
+      }
+    })
+    .state('eventmenu2.searchresults_clicked.menudate', {
+      url: "/menudate",
+      views: {
+        'menu-tab' :{
+          templateUrl: "template/menudate.html",
+          controller:'menudateCtrl'
+        }
+      }
+    })
+     .state('eventmenu2.searchresults_clicked.menutime', {
+      url: "/menutime",
+      views: {
+        'menu-tab' :{
+          templateUrl: "template/menutime.html",
+          controller:'menutimeCtrl'
+        }
+      }
+    })
+      .state('eventmenu2.searchresults_clicked.confirm', {
+      url: "/confirm",
+      views: {
+        'menu-tab' :{
+          templateUrl: "template/confirm.html",
+          controller:'confirmCtrl'
+        }
+      }
+    })
+    .state('eventmenu2.searchresults_clicked.gallery', {
       url: "/gallery",
       views: {
         'gallery-tab' :{
@@ -144,32 +201,69 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-    .state('eventmenu.searchresults_clicked.reviews', {
+    .state('eventmenu2.searchresults_clicked.reviews', {
       url: "/reviews",
       views: {
         'reviews-tab' :{
-          templateUrl: "template/reviews.html"
+          templateUrl: "template/reviews.html",
+          controller:'reviewsCtrl'
         }
       }
     })
-   .state('eventmenu.home.home1', {
-      url: "/home1",
+  .state('eventmenu.home.myreviews', {
+      url: "/myreviews",
       views: {
         'inception' :{
-          templateUrl: "template/home1.html"
+          templateUrl: "template/myreviews.html",
+          controller:'myreviewsCtrl'
         }
       }
     })
-        .state('eventmenu.home.home2', {
-      url: "/home2",
+    .state('eventmenu.home.myfavorites', {
+      url: "/myfavorites",
       views: {
         'inception' :{
-          templateUrl: "template/home2.html"
+          templateUrl: "template/myfavorites.html",
+          controller:'myfavoritesCtrl'
         }
       }
     })
-
-  $urlRouterProvider.otherwise("/event/home/homecontent");
+    .state('eventmenu.home.editprofile', {
+      url: "/editprofile",
+      views: {
+        'inception' :{
+          templateUrl: "template/editprofile.html",
+          controller:'editprofileCtrl'
+        }
+      }
+    })
+    .state('eventmenu.home.logout', {
+      url: "/logout",
+      views: {
+        'inception' :{
+          templateUrl: "template/logout.html",
+          controller:'logoutCtrl'
+        }
+      }
+    })
+    .state('eventmenu.home.terms_and_conditions', {
+      url: "/terms_and_conditions",
+      views: {
+        'inception' :{
+          templateUrl: "template/terms_and_conditions.html",
+          controller:'terms_and_conditionsCtrl'
+        }
+      }
+    })
+    .state('eventmenu.home.privacy', {
+      url: "/privacy",
+      views: {
+        'inception' :{
+          templateUrl: "template/privacy.html",
+          controller:'privacyCtrl'
+        }
+      }
+    })
+  $urlRouterProvider.otherwise('/event/home/homecontent');
 });
-
 

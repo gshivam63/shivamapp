@@ -2,25 +2,23 @@
       <ion-side-menus>  
         <ion-pane ion-side-menu-content>
           <ion-nav-bar class="bar-dark nav-title-slide-ios7">
-          <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
           </ion-nav-bar>
           <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
         </ion-pane> 
         
-        <ion-side-menu side="left">
-          <ion-content >
-            <ul class="list">
-              <a href="#" class="item">PROFILE</a>
-              <a href="#"> <img src="img/profile.jpg" class="profile_img"/></a>
-              <a href="#" class="item">shivam gupta</a>
-              <a href="#/event/home/homecontent" class="item">HOME</a>
-              <a href="#/event/home/home1" class="item">MY REVIEWS</a>      
-              <a href="#/event/home/home2" class="item">EDIT PROFILE</a>
-              <a href="#" class="item">LOGOUT</a>
-              <a href="#" class="item">Terms and Conditions</a>
-              <a href="#" class="item">Privacy</a>
-              <a href="#" class="item">2014 rvan Software Solutions Pvt Ltd</a>
-            </ul>
+        <ion-side-menu class="disabled" side="left" style="background-color:#eff1e6;">
+          <ion-content class="mysidemenu">
+              <div class="sidelink"><a href="#">PROFILE</a><br/></div>
+              <div class="profilepic"><a href="#"> <img src="img/profile.png" class="profile_img"/></a><br/></div>
+              <div class="sidelink"><a href="#"><b>shivam gupta</b></a><br/></div>
+              <div class="sidelink"><a href="#/event/home/homecontent">HOME</a><br/></div>
+              <div class="sidelink"><a href="#/event/home/myreviews">MY REVIEWS</a><br/></div>
+              <div class="sidelink"><a href="#/event/home/myfavorites">My FAVORITES</a><br/></div>
+              <div class="sidelink"><a href="#/event/home/editprofile">EDIT PROFILE</a><br/></div>
+              <div class="sidelink"><a href="#/event/home/logout">LOGOUT</a><br/></div>
+              <div class="sidebottomlink"><a href="#/event/home/terms_and_conditions">Terms and Conditions</a><br/></div>
+              <div class="sidebottomlink"><a href="#/event/home/privacy">Privacy</a><br/></div>
+              <div class="sidebotomlink"><a href="#">2014 rvan Software Solutions Pvt Ltd</a><br/></div>
           </ion-content>
         </ion-side-menu>
       </ion-side-menus>

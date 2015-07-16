@@ -1,6 +1,13 @@
 angular.
   module('starter')
-  .controller('venuesCtrl', function($scope, $http, sharedProperties) {
+  .controller('venuesCtrl', function($scope, $http,$state,$ionicLoading, sharedProperties) {
+   $scope.loading = $ionicLoading.show({
+    content: '<div class="ionic-logo"></div>',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 0,
+    showDelay: 0
+  });
   $scope.city = sharedProperties.getString(); 
   $scope.location= sharedProperties.get_location_selected();
   $scope.service= sharedProperties.getservice();
@@ -13,9 +20,13 @@ angular.
     $scope.index_selected=indexvalue;
     sharedProperties.setindex($scope.index_selected);
   }
+   $scope.navigate_look=function(){
+    $state.go('eventmenu2.look_and_book');
+  }
   $scope.photos=[];
   $scope.spaname=[];
   $scope.rating=[];
+  $scope.indexid=[];
    var i=0;
   /* angular.fromJson will convert string data into json object */
   for(i=0;i<count;i++)
@@ -30,5 +41,10 @@ angular.
   {
   $scope.rating[i] = $scope.names[i].venuestats.averageRating;
   }
+    for(i=0;i<count;i++)
+  {
+  $scope.indexid[i] = $scope.names[i].id;
+  }
   });
+   $scope.loading.hide();
 });

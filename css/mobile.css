@@ -1,30 +1,36 @@
-@media (max-width: 480px) {
-.left{
-	padding-left: 3%;
-	position: relative;
-	padding-top: 12%;
-}
-.right{
+@media (max-width:320px) {
+.homerow{
+	width: 100%;
+	height: 26%;
 	text-align: center;
-	padding-top: 13%;
-}
-.spa_name{
-	left:0;
-	font-size: 19px;
 	color: white;
-	font-weight: bold;
-}
-.spa_location{
-	font-size: 19px;
-	color: white;
-}
-.spa_rating{
 	font-size: 25px;
-	color: green;
-	color: white;
 }
-.rating_text{
-	color: lightgreen;
+.homelook{
+	padding-top: 10%;
+}
+.homemob{
+	padding-top: 16%;
+}
+.sidelink{
+	font-size: 15px;
+	padding: 1.5px;
+	text-align: center;
+}
+}
+
+@media (min-width: 321px) and (max-width: 375px){
+.homelook{
+	padding-top: 14%;
+}
+.homemob{
+	padding-top: 20%;
+}
+.sidelink{
 	font-size: 20px;
+	padding: 14px;
+	text-align: center;
 }
+}
+
 }

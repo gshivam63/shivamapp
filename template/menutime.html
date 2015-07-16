@@ -1,0 +1,12 @@
+  <ion-content has-header="true">
+    <div style="padding-top:90px;">
+    <div class="list">
+      <div class="item item-divider">
+          <a href="#/event/selectcity" class="location">Pick Appointment Time<i class="icon ion-chevron-right icon-accessory pull-right righticon"></i></a>
+      </div>
+      <div class="list">
+            <a class="item" ng-click="settime(hourarray[($index)]+':'+timearray[($index)])" href="#/event2/searchresults_clicked/confirm" ng-repeat="i in getNumber(len) track by $index">{{hourarray[($index)]}}:{{timearray[($index)]}}</a>
+      </div>     
+    </div>
+    </div>
+  </ion-content>

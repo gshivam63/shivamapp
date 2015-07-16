@@ -1,5 +1,8 @@
-	<ion-view title="Pick & Book Appointment">
-      <ion-content>  
+    <ion-view title="Pick & Book Appointment">  
+      <ion-nav-buttons side="left">
+      <span ng-click="navigate_look()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
+      <ion-content has-header="true">  
           <div class="row" ng-repeat="x in photos">
             <div class="col">
               <div class="row first_row">
@@ -8,7 +11,7 @@
                 </span>
                 <div class="row second_row">
                     <div class="col col-67 left">
-                      <a href="#/event/searchresults_clicked" ng-click="setindex($index)"><font class="spa_name">{{spaname[($index)]}}</font></a>
+                      <a href="#/event2/searchresults_clicked" ng-click='setindex(indexid[$index])'><font class="spa_name">{{spaname[($index)]}}</font></a>
                       <br/>
                       <font class="spa_location">{{location}}</font>
                     </div>

@@ -1,37 +1,77 @@
-	<ion-content has-header="true">
-          <div style="padding-top:80px;" class="image_layer">
-                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{photos[2].original}}" class="searchresults" /></a>
+  <ion-content has-header="true" ng-init="updateinfo()" style="padding-top:80px;" ng-repeat="x in venueinfo">
+  <!---this code will add favorites and store them at console---->
+  <span ng-repeat="y in x">
+          <div class="image_layer">
+                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{y.photos[0].original}}" class="infoimage" /></a>
+                  <span ng-click='addtofavorites(names.name)' class="addtofavorites">
+                    <i class="icon" ng-class="{'ion-heart-broken': !isActive, 'ion-heart': isActive}" ng-click="isActive = !isActive"></i>
+                  </span>
           </div>
+  <!--- add to favorites code ends-->
           <div class="layer">
             <div class="left_layer">
-              <span class="book_appointment">BOOK APPOINTMENT</span>
+              <span class="book_appointment"><a href="#/event2/searchresults_clicked/menu">BOOK APPOINTMENT</a></span>
             </div>
             <div class="right_layer">
-              <span class="write_review">WRITE A REVIEW</span>
+              <span class="write_review"><a href="#/event2/writereview">WRITE A REVIEW</a></span>
             </div>
           </div>
-          <div class="info_spaname">
-              {{ names.name }}
+          <div class="row info_spaname responsive-sm">
+            <div class="col">
+              {{  y.name }}
+            </div>
           </div>
-          <div class="info_open_close">
-              <button id="open" type="button">OPEN</button>
-          </div>
+          <div ng-init='start(y.operationalTimings.from,y.operationalTimings.to)'></div>      
+          <!--div for setting close open toggling -->
+          <span class="row" ng-repeat="item in schedule" ng-show="$first">
+           <span ng-class="isTimeUp(item.morning,item.evening) ? 'close' : 'open'" ng-bind-html="myHTML"></span>
+           {{item.morning}}{{item.evening}}
+          </span>
+          <!-- toggle ends -->
           <div class="openhours">
             <div id="info_title">Open Hours</div>
-            <div id="timings">{{ timings.from }} &nbsp; &nbsp; &nbsp; &nbsp; {{ timings.to }}</div>
+            <div id="timings">{{ y.operationalTimings.from }} &nbsp; &nbsp; &nbsp; &nbsp; {{ y.operationalTimings.to }}</div>
           </div>
+          <hr width="90%"/>
           <div class="address">
             <div id="info_title">Address</div>
-            <div class="info_address_text">{{ names.address }}</div>
+            <div class="info_address_text">{{ y.address }}</div>
           </div>
+          <hr width="90%"/>
           <div class="rating_and_reviews">
-            <div id="info_title">Ratings and Reviews</div>
+            <div id="info_title">Ratings and Reviews<br/>
+              <span ng-repeat='x in repeat(avgRating) track by $index'>
+                  <i class="icon ion-star"></i>
+             </span>
+             {{ reviewlength }}
+            </div>
+
           </div>
+          <hr width="90%"/>
           <div class="contact">
             <div id="info_title">Contact</div>
-            <div class="info_contacts_text">{{ names.contacts }}</div>
+            <div class="info_contacts_text">{{ y.contacts }}</div>
           </div>
+          <hr width="90%"/>
           <div class="facilities">
             <div id="info_title">Facilities</div>
+            <div class="facility_info">
+              <button class="button button-icon" ng-init='toggleIcon1(y.parking)'>
+                  <i class="icon" ng-class="isparking ? 'ion-checkmark-circled' : 'ion-close-circled'"></i>Parking
+              </button>
+              <button class="button button-icon" ng-init='toggleIcon2(y.creditCard)'> 
+                  <i class="icon" ng-class="iscredit ? 'ion-checkmark-circled' : 'ion-close-circled'"></i>Credit Cards 
+              </button>
+              <button class="button button-icon" ng-init='toggleIcon3(y.showers)'>
+                  <i class="icon" ng-class="isshower ? 'ion-checkmark-circled' : 'ion-close-circled'"></i>Shower 
+              </button>
+              <button class="button button-icon" ng-init='toggleIcon4(y.lockers)'>
+                  <i class="icon" ng-class="islocker ? 'ion-checkmark-circled' : 'ion-close-circled'"></i>Lockers  
+              </button>
+              <button class="button button-icon" ng-init='toggleIcon5(y.towels)'>
+                  <i class="icon" ng-class="istowel ? 'ion-checkmark-circled' : 'ion-close-circled'"></i>Towels
+              </button>
+            </div>
           </div>
+        </span>
     </ion-content>

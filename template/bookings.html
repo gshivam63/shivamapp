@@ -1,5 +1,31 @@
    <ion-view title="Bookings">
-      <ion-content>
-        
+      <ion-nav-buttons side="left">
+      <span ng-click="navigatehome()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
+      <ion-content ng-class="donebooking ? 'mybookings' : 'nobookings' " ng-init="getmyfavorites()">
+       <div class="row" ng-repeat="x in photos">
+            <div class="col">
+              <div class="row first_row">
+                <span class="image_span" ng-repeat="y in x[0]" ng-show="$first">
+                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{y}}" class="searchresults" /></a>
+                </span>
+                <div class="row second_row">
+                    <div class="col col-50 left" style="overflow:hidden;padding-top:15px;">
+                      <a href="#/event2/app_details" ng-click='setappid(appid[$index],venueid[$index])'><font class="spa_name">{{spaname[($index)]}}</font></a>
+                      <br/>
+                    </div>
+                   <div class="col col-25 right" style="padding-top:25px;">
+                      <font class="spa_rating">{{treatments[($index)]}}</font><br/>
+                      <font class="bookingtime">Treatment(s)</font>
+                    </div>
+                    <div class="col col-25 right" style="padding-top:25px;">
+                      <font class="bookingtime">{{bookingtime[($index)]}}</font><br/>
+                      <font class="bookingtime">{{bookingdate[($index)]}}</font><br/>
+                    </div>
+              </div>
+              </div>
+
+            </div>
+          </div>
       </ion-content>
     </ion-view>

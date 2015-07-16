@@ -1,0 +1,21 @@
+		<ion-view title="My Reviews">
+		 <ion-nav-buttons side="left">
+      		<span ng-click="navigatehome()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      	 </ion-nav-buttons>
+		 <ion-content has-header="true" ng-init="getmyreviews()">
+            	<div class="row" ng-repeat="x in myreviews">
+            		<div class="col reviewcol">
+	            		<div class="row reviewspaname">
+	            			{{ x.venuedetail.name}}
+	            		</div>
+	            		<span ng-repeat='y in repeat(avgRating[$index]) track by $index'>
+		                  <i class="icon ion-star" style="color:#8cd093; font-size:25px;padding:5px;"></i>
+		                </span>
+	     	      		<div class="row reviewsparemark">
+	     	      			{{ x.remarks}}
+	     	      		</div>
+	            		<hr/>
+            		</diV>
+               	</div>
+         </ion-content>
+        </ion-view>

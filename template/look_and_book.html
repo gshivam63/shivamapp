@@ -1,24 +1,23 @@
-      <ion-view title="Look AND BOOK">
-       <ion-content has-header="true" padding="true" class="lookcontent">
-            <ion-content padding="true" delegate-handle="mainScroll">
+      <ion-view title="Look & Book">
+       <ion-nav-buttons side="left">
+      <span ng-click="navigate2()" class="nav_button"><i class="icon ion-chevron-left"></i></span>
+      </ion-nav-buttons>
+            <ion-content has-header="true" padding="true" class="lookcontent" padding="true" delegate-handle="mainScroll">
 
-          <h4 ng-click="get_location_selected()">Update Location</h4>
-          <h4 ng-click="getservice()">Update Service</h4>
-
-          <p class="look_and_book_text">LOOK AND BOOK</p>
+          <div class="look_and_book_text">LOOK AND BOOK</div>
           <div class="lookContainer">
               <div class="mylist">
-                          <a href="#/event/location" ng-init="get_location_selected()" >
+                          <a href="#/event2/location" ng-init="get_location_selected()" >
                                   {{location}}
                           </a>
               </div>
               <div class="mylist">
-                          <a href="#/event/services" ng-init="getservice()" >
+                          <a href="#/event2/services" ng-init="getservice()" >
                                   {{service}}
                           </a>
               </div>
           </div>
-          <button id="search_button" onclick="window.location.href='#/event/searchresults'" ><font color="white">SEARCH RESULTS</font></button>
+          <button id="search_button" ng-init="getsrcresults()" ng-click="spacheck(length_rlt)"><font color="white">SEARCH RESULTS &nbsp ({{ length_rlt }})</font></button>
       
         </ion-content>
       </ion-view>

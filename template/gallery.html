@@ -1,7 +1,11 @@
 	<ion-content has-header="true">
               <div style="padding-top:80px;" class="image_layer">
-                <span ng-repeat="x in photos">
-                  <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{x.original}}" class="searchresults" /></a>
+                <span ng-repeat="x in venueinfo">
+                	<span ng-repeat="y in x">
+						        <span ng-repeat="z in y.photos">
+                 			 <img ng-src="http://d2rmoau0tbh3pz.cloudfront.net/{{z.original}}" class="searchresults_gallery" />
+                 		</span>
+                 	</span>
                 </span>
               </div>           
      </ion-content>
